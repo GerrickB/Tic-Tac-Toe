@@ -1,4 +1,4 @@
-class TicTac
+module TicTac
 end
 
 class Player
