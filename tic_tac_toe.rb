@@ -12,12 +12,27 @@ class TicTac
   @@choices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   
   def self.play_game(p_1, p_2)
+    puts "#{p_1.name} and #{p_2.name} want to play"
+    @@choices.each do |num|
+      p_1.choice << num
+      p_2.choice << num
+    end
+    puts "#{p_1.name} choices are #{p_1.choice}"
+    puts "#{p_2.name} choices are #{p_2.choice}"
   end
 end
 
 class Player
+  attr_accessor :name, :choice
   def initialize(name)
     @name = name
     @choice = []
   end
 end
+
+player_1 = Player.new('Player 1')
+player_2 = Player.new('Player 2')
+p player_1
+puts player_1.name
+
+TicTac.play_game(player_1, player_2)
