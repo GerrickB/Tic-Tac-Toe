@@ -13,12 +13,11 @@ class TicTac
   
   def self.play_game(p_1, p_2)
     puts "#{p_1.name} and #{p_2.name} want to play"
-    @@choices.each do |num|
-      p_1.choice << num
-      p_2.choice << num
-    end
-    puts "#{p_1.name} choices are #{p_1.choice}"
-    puts "#{p_2.name} choices are #{p_2.choice}"
+    
+    while @@choices.length != 0
+      
+    
+    
   end
 end
 
@@ -28,11 +27,17 @@ class Player
     @name = name
     @choice = []
   end
+
+  def choose_number
+    @choice << gets.chomp.to_i
+  end
+
 end
 
 player_1 = Player.new('Player 1')
 player_2 = Player.new('Player 2')
 p player_1
 puts player_1.name
+puts player_1.choice
 
 TicTac.play_game(player_1, player_2)
