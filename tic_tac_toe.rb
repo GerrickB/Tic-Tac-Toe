@@ -9,16 +9,19 @@ class TicTac
     [0, 4, 8],
     [2, 4, 6],
   ]
+  @@num = a
   @@choices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   
   def self.play_game(p_1, p_2)
     puts "#{p_1.name} and #{p_2.name} want to play"
     
     while @@choices.length != 0
-      
-    
-    
-  end
+      until @@choices.include?(@@num)
+        puts "choose from #{@@choices}"
+        num = gets.chomp.to_i
+        player_1.choice << num
+      end
+    end
 end
 
 class Player
