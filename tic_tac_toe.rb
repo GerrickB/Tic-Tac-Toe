@@ -18,16 +18,23 @@ class TicTac
     while @@choices.length != 0
       puts "#{p_1.name}'s turn, choose from #{@@choices}"
       game(p_1)
-      #p p_1.choice
+      #p_1.choice.shift if p_1.choice.length > 3
+      p p_1.choice
       break if winner_check(p_1.name, p_1.choice) == true
+
+      puts "#{p_2.name}'s turn, choose from #{@@choices}"
+      game(p_2)
+      p p_2.choice
+      break if winner_check(p_2.name, p_2.choice) == true
     end
   end
 
   def self.game(player)
     @@num = gets.chomp.to_i
     player.choice << @@num
-    p player.choice
+    #p player.choice
     @@choices.delete(@@num)
+    player.choice.shift if player.choice.length > 3
   end
 
   def self.winner_check(player, choice)
