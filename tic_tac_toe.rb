@@ -56,7 +56,7 @@ class Player
   end
 end
 
-player_1 = Player.new('Player 1')
-player_2 = Player.new('Player 2')
+player1 = Player.new('Player 1')
+player2 = Player.new('Player 2')
 
-TicTac.play_game(player_1, player_2)
+TicTac.play_game(player1, player2)
